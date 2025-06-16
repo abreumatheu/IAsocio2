@@ -1400,50 +1400,51 @@
         </div>
     </footer>
         <!-- Demo Modal -->
-    <div id="demoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; overflow-y: auto;">
-        <div style="max-width: 1200px; margin: 40px auto; padding: 20px; position: relative;">
-            <button onclick="closeDemo()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2em; cursor: pointer;">×</button>
+    <!-- Demo Modal -->
+    <div id="demoModal" class="demo-modal">
+        <div class="demo-container">
+            <button class="demo-close" onclick="closeDemo()">×</button>
             
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: 2.5em; margin-bottom: 10px;">Experimente o <span class="gradient-text">MeuSócio AI</span> em Ação</h2>
-                <p style="color: var(--gray); font-size: 1.2em;">Navegue pela demo interativa e veja como transformamos seu dia a dia</p>
+            <div class="demo-header">
+                <h2>Experimente o <span class="gradient-text">MeuSócio AI</span> em Ação</h2>
+                <p>Navegue pela demo interativa e veja como transformamos seu dia a dia</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start;">
-                <!-- Demo Controls -->
-                <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 30px;">
-                    <h3 style="margin-bottom: 20px;">📱 Navegue pela Demo</h3>
+            <div class="demo-content">
+                <!-- Demo Navigation -->
+                <div class="demo-nav-container">
+                    <h3>📱 Navegue pela Demo</h3>
                     <div class="demo-nav">
                         <button class="demo-nav-btn active" onclick="showDemoScreen('morning')">
-                            <span style="font-size: 1.5em;">☀️</span>
+                            <span>☀️</span>
                             <span>Rotina Matinal</span>
                         </button>
                         <button class="demo-nav-btn" onclick="showDemoScreen('chat')">
-                            <span style="font-size: 1.5em;">💬</span>
+                            <span>💬</span>
                             <span>Chat com IA</span>
                         </button>
                         <button class="demo-nav-btn" onclick="showDemoScreen('analytics')">
-                            <span style="font-size: 1.5em;">📊</span>
+                            <span>📊</span>
                             <span>Análises em Tempo Real</span>
                         </button>
                         <button class="demo-nav-btn" onclick="showDemoScreen('learning')">
-                            <span style="font-size: 1.5em;">🎓</span>
+                            <span>🎓</span>
                             <span>Micro-Learning</span>
                         </button>
                         <button class="demo-nav-btn" onclick="showDemoScreen('decisions')">
-                            <span style="font-size: 1.5em;">⚡</span>
+                            <span>⚡</span>
                             <span>Histórico de Decisões</span>
                         </button>
                     </div>
                     
-                    <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border);">
-                        <h4 style="margin-bottom: 15px;">🎯 Dica da Demo</h4>
-                        <p style="color: var(--gray); font-size: 0.9em;">Clique nos cards e botões do app para interagir. A demo simula um dia real de uso!</p>
+                    <div class="demo-tip">
+                        <h4>🎯 Dica da Demo</h4>
+                        <p>Clique nos cards e botões do app para interagir. A demo simula um dia real de uso!</p>
                     </div>
                 </div>
 
                 <!-- Phone Demo -->
-                <div style="position: relative;">
+                <div class="demo-phone-container">
                     <div class="demo-phone-mockup">
                         <div class="phone-screen">
                             <div class="app-interface" id="demoApp">
@@ -1509,11 +1510,11 @@
                                         </div>
                                     </div>
 
-                                    <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 20px; background: rgba(15,23,42,0.95); padding: 15px 30px; border-radius: 30px; border: 1px solid var(--border);">
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;">🏠</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;" onclick="showDemoScreen('chat')">💬</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;" onclick="showDemoScreen('analytics')">📊</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;">👤</button>
+                                    <div class="demo-bottom-nav">
+                                        <button onclick="showDemoScreen('morning')">🏠</button>
+                                        <button onclick="showDemoScreen('chat')">💬</button>
+                                        <button onclick="showDemoScreen('analytics')">📊</button>
+                                        <button>👤</button>
                                     </div>
                                 </div>
 
@@ -1530,7 +1531,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="chat-messages" style="height: 500px; overflow-y: auto; padding-bottom: 80px;">
+                                    <div class="chat-messages" style="height: 450px; overflow-y: auto; padding-bottom: 80px;">
                                         <div class="chat-message ai">
                                             <p>Olá Carlos! Vi que você abriu a proposta de aquisição. Quer que eu faça uma análise detalhada dos prós e contras? 🤔</p>
                                         </div>
@@ -1642,11 +1643,11 @@
                                         </div>
                                     </div>
 
-                                    <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 20px; background: rgba(15,23,42,0.95); padding: 15px 30px; border-radius: 30px; border: 1px solid var(--border);">
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;" onclick="showDemoScreen('morning')">🏠</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;" onclick="showDemoScreen('chat')">💬</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;">📊</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;">👤</button>
+                                    <div class="demo-bottom-nav">
+                                        <button onclick="showDemoScreen('morning')">🏠</button>
+                                        <button onclick="showDemoScreen('chat')">💬</button>
+                                        <button>📊</button>
+                                        <button>👤</button>
                                     </div>
                                 </div>
 
@@ -1724,7 +1725,52 @@
                                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                                             <h4>Decisões Recentes</h4>
                                             <span style="font-size: 0.8em; color: var(--gray);">Ver todas →</span>
-                                        </div<!DOCTYPE html>
+                                        </div>
+                                        
+                                        <div style="border-left: 3px solid var(--success); padding-left: 15px; margin-bottom: 15px;">
+                                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                                <h5 style="font-size: 0.95em;">Expansão para Colômbia</h5>
+                                                <span style="font-size: 0.8em; color: var(--success);">✓ Sucesso</span>
+                                            </div>
+                                            <p style="font-size: 0.8em; color: var(--gray); margin-top: 5px;">ROI: +280% | Tempo: 2h | Há 3 dias</p>
+                                        </div>
+
+                                        <div style="border-left: 3px solid var(--primary); padding-left: 15px; margin-bottom: 15px;">
+                                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                                <h5 style="font-size: 0.95em;">Nova Estratégia de Pricing</h5>
+                                                <span style="font-size: 0.8em; color: var(--primary);">→ Em progresso</span>
+                                            </div>
+                                            <p style="font-size: 0.8em; color: var(--gray); margin-top: 5px;">Impacto: +R$450K MRR | Tempo: 4h | Há 7 dias</p>
+                                        </div>
+
+                                        <div style="border-left: 3px solid #ef4444; padding-left: 15px;">
+                                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                                <h5 style="font-size: 0.95em;">Parceria com TechCorp</h5>
+                                                <span style="font-size: 0.8em; color: #ef4444;">✗ Evitada</span>
+                                            </div>
+                                            <p style="font-size: 0.8em; color: var(--gray); margin-top: 5px;">Economia: R$2M | Tempo: 1h | Há 12 dias</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="demo-bottom-nav">
+                                        <button onclick="showDemoScreen('morning')">🏠</button>
+                                        <button onclick="showDemoScreen('chat')">💬</button>
+                                        <button onclick="showDemoScreen('analytics')">📊</button>
+                                        <button>👤</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-cta">
+                <p>Impressionado? Esta é apenas uma pequena amostra do poder do MeuSócio AI.</p>
+                <a href="#acesso" class="access-button" onclick="closeDemo()">Quero Ter Acesso Completo</a>
+            </div>
+        </div>
+    </div><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -2549,7 +2595,261 @@
             text-align: center;
         }
 
-        /* Responsive */
+        /* Demo Modal Styles */
+        .demo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .demo-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .demo-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 10px;
+        }
+
+        .demo-header p {
+            color: var(--gray);
+            font-size: 1.2em;
+        }
+
+        .demo-content {
+            display: grid;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        /* Demo Navigation */
+        .demo-nav-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .demo-nav h3 {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .demo-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .demo-nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 1em;
+        }
+
+        .demo-nav-btn:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--primary);
+        }
+
+        .demo-nav-btn.active {
+            background: rgba(99,102,241,0.1);
+            border-color: var(--primary);
+        }
+
+        .demo-tip {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .demo-tip h4 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .demo-tip p {
+            color: var(--gray);
+            font-size: 0.9em;
+        }
+
+        /* Demo Phone */
+        .demo-phone-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .demo-phone-mockup {
+            position: relative;
+            width: 400px;
+            height: 820px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 15px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5),
+                        inset 0 0 0 2px rgba(255,255,255,0.1);
+        }
+
+        .demo-screen {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .demo-screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .demo-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-2px);
+        }
+
+        .card-expansion {
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; max-height: 0; }
+            to { opacity: 1; max-height: 500px; }
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .chat-message.ai {
+            background: rgba(99,102,241,0.1);
+            border-radius: 15px;
+            padding: 15px;
+            margin-right: 50px;
+        }
+
+        .chat-message.user {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 15px;
+            margin-left: 50px;
+            text-align: right;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .demo-bottom-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: rgba(15,23,42,0.95);
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .demo-bottom-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-bottom-nav button:hover {
+            color: var(--primary);
+        }
+
+        .demo-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .demo-cta p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .demo-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-phone-mockup {
+                max-width: 350px;
+                height: 720px;
+            }
+
+            .demo-nav-container {
+                order: 2;
+            }
+
+            .demo-phone-container {
+                order: 1;
+            }
+        }
+
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -2620,545 +2920,181 @@
             .pain-points, .features, .how-it-works, .success-stories, .faq, .cta-section, .access-section {
                 padding: 80px 20px;
             }
+
+            .pain-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pain-card {
+                padding: 30px 20px;
+            }
+
+            /* Demo Mobile Optimizations */
+            .demo-modal {
+                padding: 10px;
+            }
+
+            .demo-container {
+                padding: 20px 10px;
+            }
+
+            .demo-phone-mockup {
+                width: 280px;
+                height: 580px;
+                padding: 10px;
+                border-radius: 30px;
+            }
+
+            .phone-screen {
+                border-radius: 20px;
+            }
+
+            .app-interface {
+                padding: 20px 15px;
+            }
+
+            .demo-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .demo-nav-btn {
+                flex: 1;
+                min-width: calc(50% - 4px);
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+
+            .demo-nav-btn span:first-child {
+                font-size: 1.2em;
+            }
+
+            .demo-nav-container {
+                padding: 20px;
+            }
+
+            .demo-tip {
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+
+            .chat-message.ai {
+                margin-right: 20px;
+            }
+
+            .chat-message.user {
+                margin-left: 20px;
+            }
+
+            .demo-bottom-nav {
+                padding: 12px 25px;
+                gap: 15px;
+            }
+
+            .demo-bottom-nav button {
+                font-size: 1.3em;
+            }
         }
-    </style>
-</head>
-<body>
-    <div class="bg-gradient"></div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">MeuSócio AI</div>
-            <div class="nav-links">
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#recursos">Recursos</a>
-                <a href="#depoimentos">Depoimentos</a>
-                <a href="#acesso" class="access-button">Solicitar Acesso</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-        </div>
-    </nav>
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5em;
+            }
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="beta-badge">
-                    <span></span>
-                    Vagas Limitadas - Beta Exclusivo
-                </div>
-                
-                <h1>O <span class="gradient-text">Parceiro Estratégico</span> que Todo Líder Precisa</h1>
-                <p>Uma inteligência artificial exclusiva, treinada para entender profundamente sua empresa e transformar dados em decisões certeiras.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#acesso" class="access-button">Solicitar Acesso Exclusivo</a>
-                    <a href="#demo" class="secondary-button" onclick="openDemo(event)">Ver Demonstração</a>
-                </div>
+            .beta-badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
 
-                <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">5min</div>
-                        <div class="stat-label">Por dia apenas</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">87%</div>
-                        <div class="stat-label">Decisões mais rápidas</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Sempre disponível</div>
-                    </div>
-                </div>
-            </div>
+            .demo-phone-mockup {
+                width: 260px;
+                height: 540px;
+            }
 
-            <div class="phone-mockup">
-                <div class="phone-screen">
-                    <div class="app-interface">
-                        <div class="app-header">
-                            <h3>Bom dia, CEO! ☀️</h3>
-                            <div class="app-time">Suas 3 decisões prioritárias</div>
-                        </div>
+            .demo-nav-btn {
+                min-width: 100%;
+                margin-bottom: 5px;
+            }
 
-                        <div class="app-card" style="animation-delay: 0.3s;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                <span style="color: #ef4444; font-weight: 600;">🚨 CRÍTICO</span>
-                                <span style="font-size: 0.8em; opacity: 0.7;">Tech Corp</span>
-                            </div>
-                            <h4>Oportunidade de Aquisição</h4>
-                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.7); margin-top: 10px;">
-                                Startup concorrente à venda. Valuation: R$2.5M
-                            </p>
-                            <div style="margin-top: 15px; padding: 10px; background: rgba(99,102,241,0.1); border-radius: 10px;">
-                                <span style="color: var(--primary); font-weight: 600;">💡 Análise: </span>
-                                <span style="font-size: 0.9em;">ROI projetado de 280% em 18 meses</span>
-                            </div>
-                        </div>
+            .demo-nav {
+                flex-direction: column;
+            }
 
-                        <div class="app-card" style="animation-delay: 0.5s;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                <span style="color: var(--success); font-weight: 600;">📈 CRESCIMENTO</span>
-                                <span style="font-size: 0.8em; opacity: 0.7;">Premium Solutions</span>
-                            </div>
-                            <h4>Expansão Internacional</h4>
-                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.7); margin-top: 10px;">
-                                Mercado LATAM pronto. Demanda validada: +450%
-                            </p>
-                            <div style="margin-top: 15px; padding: 10px; background: rgba(16,185,129,0.1); border-radius: 10px;">
-                                <span style="color: var(--success); font-weight: 600;">💡 Timing: </span>
-                                <span style="font-size: 0.9em;">Janela ideal nos próximos 45 dias</span>
-                            </div>
-                        </div>
+            .app-card {
+                padding: 15px;
+                margin-bottom: 12px;
+            }
 
-                        <div class="app-card" style="animation-delay: 0.7s;">
-                            <div style="background: rgba(236,72,153,0.2); padding: 15px; border-radius: 10px;">
-                                <h4 style="color: var(--accent); margin-bottom: 10px;">🎓 Insight Exclusivo</h4>
-                                <p style="font-size: 0.9em;">"Estratégias de M&A que aumentam valuation em 3x"</p>
-                                <button style="margin-top: 10px; background: var(--accent); border: none; padding: 8px 20px; border-radius: 20px; color: white; font-weight: 600; cursor: pointer;">Acessar em 5min</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
 
-    <!-- Pain Points Section -->
-    <section class="pain-points fade-in">
-        <div class="section-header">
-            <h2>Os <span class="gradient-text">Desafios Silenciosos</span> do Topo</h2>
-            <p>Reconhece essas situações no seu dia a dia executivo?</p>
-        </div>
+            .section-header p {
+                font-size: 1rem;
+            }
+        }
 
-        <div class="pain-grid">
-            <div class="pain-card">
-                <div class="pain-icon">🎯</div>
-                <h3>Decisões Solitárias</h3>
-                <p>No topo, não há com quem dividir o peso das grandes decisões. A responsabilidade é sua, sempre.</p>
-            </div>
+        /* iPad specific optimizations */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .demo-content {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 30px;
+            }
 
-            <div class="pain-card">
-                <div class="pain-icon">⚡</div>
-                <h3>Velocidade vs Precisão</h3>
-                <p>O mercado não espera. Mas uma decisão errada pode custar milhões. Como equilibrar?</p>
-            </div>
+            .demo-phone-mockup {
+                width: 320px;
+                height: 660px;
+            }
 
-            <div class="pain-card">
-                <div class="pain-icon">📊</div>
-                <h3>Dados Fragmentados</h3>
-                <p>Informações em 10 plataformas diferentes. Quando juntar tudo para ter a visão completa?</p>
-            </div>
+            .demo-nav {
+                flex-direction: column;
+            }
 
-            <div class="pain-card">
-                <div class="pain-icon">🔮</div>
-                <h3>Visão de Futuro</h3>
-                <p>Prever tendências, antecipar movimentos. A intuição ajuda, mas não é suficiente.</p>
-            </div>
+            .demo-nav-btn {
+                min-width: auto;
+            }
+        }
 
-            <div class="pain-card">
-                <div class="pain-icon">🚀</div>
-                <h3>Escalar sem Perder Controle</h3>
-                <p>Crescer rápido mantendo a qualidade e cultura. Um desafio que poucos vencem.</p>
-            </div>
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+            .nav-links.mobile-active {
+                display: flex;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15,23,42,0.98);
+                flex-direction: column;
+                padding: 24px;
+                gap: 24px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+            }
+        }
 
-            <div class="pain-card">
-                <div class="pain-icon">💭</div>
-                <h3>Síndrome do Impostor</h3>
-                <p>Mesmo no sucesso, aquela voz sussurra: "Será que estou fazendo certo?"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features fade-in" id="recursos">
-        <div class="section-header">
-            <h2>Tecnologia de <span class="gradient-text">Ponta</span> a Seu Serviço</h2>
-            <p>Um parceiro que evolui com você e sua empresa</p>
-        </div>
-
-        <div class="features-showcase">
-            <div class="feature-content">
-                <h3>Análise <span class="gradient-text">Preditiva</span></h3>
-                <p>Nossa IA processa milhões de dados em tempo real, identificando padrões invisíveis ao olho humano e antecipando cenários.</p>
-                <ul class="feature-list">
-                    <li>Previsão de tendências de mercado</li>
-                    <li>Análise de risco em tempo real</li>
-                    <li>Simulação de cenários complexos</li>
-                </ul>
-            </div>
-            <div class="feature-visual">
-                <div style="background: rgba(99,102,241,0.1); padding: 30px; border-radius: 20px; text-align: center;">
-                    <h4 style="font-size: 2em; margin-bottom: 20px;">🔮</h4>
-                    <h4 style="margin-bottom: 15px;">Previsão: Q2 2024</h4>
-                    <p style="color: rgba(255,255,255,0.8);">"Crescimento de 183% no setor tech B2B"</p>
-                    <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
-                        <button style="background: var(--primary); border: none; padding: 10px 20px; border-radius: 10px; color: white; font-weight: 600;">Ver Análise</button>
-                        <button style="background: transparent; border: 1px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 10px; color: white;">Simular</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="features-showcase">
-            <div class="feature-content">
-                <h3>Conselho <span class="gradient-text">Virtual 24/7</span></h3>
-                <p>Como ter os melhores consultores do mundo disponíveis a qualquer momento, conhecendo cada detalhe do seu negócio.</p>
-                <ul class="feature-list">
-                    <li>Validação instantânea de estratégias</li>
-                    <li>Brainstorming com IA especializada</li>
-                    <li>Second opinion imparcial sempre</li>
-                </ul>
-            </div>
-            <div class="feature-visual">
-                <div style="background: rgba(236,72,153,0.1); padding: 30px; border-radius: 20px;">
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <div style="align-self: flex-end; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px; max-width: 80%;">
-                            <p style="font-size: 0.9em;">Vale comprar essa startup por R$2.5M?</p>
-                        </div>
-                        <div style="align-self: flex-start; background: var(--primary); color: white; padding: 15px; border-radius: 15px; max-width: 80%;">
-                            <p style="font-size: 0.9em; font-weight: 600;">Analisei 47 variáveis: ROI de 280% em 18 meses. Mas atenção ao passivo trabalhista de R$120k... 📊</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="features-showcase">
-            <div class="feature-content">
-                <h3>Aprendizado <span class="gradient-text">Ultra-Personalizado</span></h3>
-                <p>Conteúdo executivo destilado em insights de 5 minutos, específico para seu momento e desafios atuais.</p>
-                <ul class="feature-list">
-                    <li>Curadoria baseada em suas decisões</li>
-                    <li>Cases relevantes ao seu setor</li>
-                    <li>Aplicação prática imediata</li>
-                </ul>
-            </div>
-            <div class="feature-visual">
-                <div style="background: rgba(16,185,129,0.1); padding: 30px; border-radius: 20px;">
-                    <h4 style="color: var(--success); margin-bottom: 15px;">🎯 Insight do Dia</h4>
-                    <h4 style="margin-bottom: 10px;">"Como a Nvidia 10x seu valor"</h4>
-                    <div style="margin: 20px 0;">
-                        <div style="background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; margin-bottom: 10px;">
-                            <div style="background: var(--success); width: 65%; height: 100%; border-radius: 4px;"></div>
-                        </div>
-                        <p style="font-size: 0.9em; opacity: 0.8;">3 de 5 minutos</p>
-                    </div>
-                    <p style="font-size: 0.9em; color: rgba(255,255,255,0.7);">💡 "Foco em uma vertical antes de expandir..."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it Works -->
-    <section class="how-it-works fade-in" id="como-funciona">
-        <div class="section-header">
-            <h2>Exclusividade em <span class="gradient-text">3 Passos</span></h2>
-            <p>Um processo seletivo para garantir o match perfeito</p>
-        </div>
-
-        <div class="process-cards">
-            <div class="process-card">
-                <div class="process-number">1</div>
-                <h3>Aplicação & Seleção</h3>
-                <p>Analisamos seu perfil e objetivos. Apenas líderes visionários com fit cultural são aprovados para o programa.</p>
-            </div>
-
-            <div class="process-card">
-                <div class="process-number">2</div>
-                <h3>Onboarding Premium</h3>
-                <p>Sessão 1-on-1 para configurar sua IA. Integração profunda com seus sistemas e personalização total.</p>
-            </div>
-
-            <div class="process-card">
-                <div class="process-number">3</div>
-                <h3>Evolução Contínua</h3>
-                <p>Sua IA aprende e evolui diariamente, tornando-se um parceiro cada vez mais valioso e preciso.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Access Form Section -->
-    <section class="access-section" id="acesso">
-        <div class="access-container">
-            <div class="section-header">
-                <h2>Solicite Seu <span class="gradient-text">Acesso Exclusivo</span></h2>
-                <p>Poucas vagas disponíveis. Processo seletivo rigoroso.</p>
-            </div>
-
-            <div class="form-container">
-                <div class="form-header">
-                    <h2>Aplicação para Beta Privado</h2>
-                    <p>Preencha com atenção. Cada detalhe importa na seleção.</p>
-                </div>
-
-                <form id="accessForm" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label class="form-label">Nome completo</label>
-                        <input type="text" class="form-input" name="nome" required placeholder="Como prefere ser chamado">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">E-mail corporativo</label>
-                        <input type="email" class="form-input" name="email" required placeholder="seu@empresa.com">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">WhatsApp</label>
-                            <input type="tel" class="form-input" name="whatsapp" required placeholder="(11) 98765-4321">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">LinkedIn</label>
-                            <input type="url" class="form-input" name="linkedin" placeholder="linkedin.com/in/seu-perfil">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">Cargo atual</label>
-                            <input type="text" class="form-input" name="cargo" required placeholder="CEO, CTO, Diretor...">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Empresa</label>
-                            <input type="text" class="form-input" name="empresa" required placeholder="Nome da empresa">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">Faturamento anual</label>
-                            <select class="form-input" name="faturamento" required>
-                                <option value="">Selecione</option>
-                                <option>Até R$ 1M</option>
-                                <option>R$ 1M - R$ 5M</option>
-                                <option>R$ 5M - R$ 20M</option>
-                                <option>R$ 20M - R$ 100M</option>
-                                <option>Acima de R$ 100M</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Setor de atuação</label>
-                            <select class="form-input" name="setor" required>
-                                <option value="">Selecione</option>
-                                <option>Tecnologia / SaaS</option>
-                                <option>E-commerce</option>
-                                <option>Serviços B2B</option>
-                                <option>Indústria</option>
-                                <option>Saúde</option>
-                                <option>Educação</option>
-                                <option>Fintech</option>
-                                <option>Outros</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Principal desafio estratégico atual</label>
-                        <textarea class="form-input" name="desafio" rows="3" required placeholder="Descreva brevemente o principal desafio que enfrenta hoje na gestão do seu negócio"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Por que você deveria ser selecionado?</label>
-                        <textarea class="form-input" name="motivacao" rows="3" required placeholder="O que te diferencia? Por que sua empresa seria ideal para nosso programa beta?"></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-button">
-                        <span id="buttonText">Enviar Aplicação</span>
-                        <span class="loading" style="display: none;"></span>
-                    </button>
-
-                    <div class="success-message" id="successMessage">
-                        ✓ Aplicação recebida! Analisaremos seu perfil e retornaremos em até 48h.
-                    </div>
-
-                    <p class="privacy-note">
-                        🔒 Suas informações são confidenciais e protegidas por NDA automático.
-                    </p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories -->
-    <section class="success-stories fade-in" id="depoimentos">
-        <div class="section-header">
-            <h2>Líderes que Já <span class="gradient-text">Transformaram</span> Seus Negócios</h2>
-            <p>Resultados reais de executivos do nosso programa exclusivo</p>
-        </div>
-
-        <div class="stories-grid">
-            <div class="story-card">
-                <div class="story-header">
-                    <div class="story-avatar">CM</div>
-                    <div class="story-info">
-                        <h4>Carlos Mendonça</h4>
-                        <p>CEO, TechScale - São Paulo</p>
-                    </div>
-                </div>
-                <p style="margin: 20px 0; color: rgba(255,255,255,0.8);">
-                    "Em 6 meses, tomamos a decisão de expandir para 3 países. A IA previu com 94% de precisão nosso sucesso na Colômbia."
-                </p>
-                <div class="story-result">
-                    <div class="result-number">12x</div>
-                    <p>Velocidade de expansão</p>
-                </div>
-            </div>
-
-            <div class="story-card">
-                <div class="story-header">
-                    <div class="story-avatar">AR</div>
-                    <div class="story-info">
-                        <h4>Ana Rodrigues</h4>
-                        <p>Founder, Luxe Commerce - Rio</p>
-                    </div>
-                </div>
-                <p style="margin: 20px 0; color: rgba(255,255,255,0.8);">
-                    "A solidão do comando acabou. É como ter um board de consultores top tier 24/7, que conhece meu negócio melhor que eu."
-                </p>
-                <div class="story-result">
-                    <div class="result-number">R$18M</div>
-                    <p>Valuation em 18 meses</p>
-                </div>
-            </div>
-
-            <div class="story-card">
-                <div class="story-header">
-                    <div class="story-avatar">PH</div>
-                    <div class="story-info">
-                        <h4>Pedro Hashimoto</h4>
-                        <p>CTO, FinanceHub - Curitiba</p>
-                    </div>
-                </div>
-                <p style="margin: 20px 0; color: rgba(255,255,255,0.8);">
-                    "Evitamos uma aquisição desastrosa. A IA identificou problemas ocultos que nossa due diligence tradicional perdeu."
-                </p>
-                <div class="story-result">
-                    <div class="result-number">R$5M</div>
-                    <p>Economizados em má decisão</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq fade-in">
-        <div class="section-header">
-            <h2>Perguntas <span class="gradient-text">Frequentes</span></h2>
-            <p>Esclarecimentos sobre nosso processo exclusivo</p>
-        </div>
-
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Como funciona o processo de seleção?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Analisamos cada aplicação individualmente, considerando fit cultural, potencial de crescimento e alinhamento com nossa visão. Apenas 15% dos aplicantes são aprovados para garantir a qualidade do programa.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Qual o investimento necessário?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>O valor é personalizado baseado no porte e necessidades da empresa. Revelamos os detalhes apenas para candidatos aprovados na primeira fase. O ROI médio dos nossos clientes é de 12x em 12 meses.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Como garantem a segurança dos dados?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Utilizamos criptografia de nível militar, servidores dedicados e compliance total com LGPD/GDPR. Cada cliente tem sua própria instância isolada. NDAs automáticos e auditorias frequentes.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span>Quanto tempo leva para ver resultados?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Decisões melhores desde o primeiro dia. Resultados mensuráveis em 30 dias. Transformação completa do processo decisório em 90 dias. A IA aprende exponencialmente com o uso.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span>É adequado para meu setor?</span>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Nossa IA é treinada em dados de mais de 50 setores diferentes. A personalização profunda garante relevância total para seu negócio específico, seja B2B, B2C, SaaS, indústria ou serviços.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>A <span class="gradient-text">Elite</span> Já Decidiu</h2>
-        <p>Enquanto outros hesitam, líderes visionários já estão transformando seus negócios.</p>
-        <a href="#acesso" class="access-button" style="margin-top: 40px; display: inline-block;">
-            Quero Fazer Parte Deste Grupo Seleto
-        </a>
-    </section>
-
-                                        </div>
-                                        
-                                        <div style="border-left: 3px solid var(--success); padding-left: 15px; margin-bottom: 15px;">
-                                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                                <h5 style="font-size: 0.95em;">Expansão para Colômbia</h5>
-                                                <span style="font-size: 0.8em; color: var(--success);">✓ Sucesso</span>
-                                            </div>
-                                            <p style="font-size: 0.8em; color: var(--gray); margin-top: 5px;">ROI: +280% | Tempo: 2h | Há 3 dias</p>
-                                        </div>
-
-                                        <div style="border-left: 3px solid var(--primary); padding-left: 15px; margin-bottom: 15px;">
-                                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                                <h5 style="font-size: 0.95em;">Nova Estratégia de Pricing</h5>
-                                                <span style="font-size: 0.8em; color: var(--primary);">→ Em progresso</span>
-                                            </div>
-                                            <p style="font-size: 0.8em; color: var(--gray); margin-top: 5px;">Impacto: +R$450K MRR | Tempo: 4h | Há 7 dias</p>
-                                        </div>
-
-                                        <div style="border-left: 3px solid #ef4444; padding-left: 15px;">
-                                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                                <h5 style="font-size: 0.95em;">Parceria com TechCorp</h5>
-                                                <span style="font-size: 0.8em; color: #ef4444;">✗ Evitada</span>
-                                            </div>
-                                            <p style="font-size: 0.8em; color: var(--gray); margin-top: 5px;">Economia: R$2M | Tempo: 1h | Há 12 dias</p>
-                                        </div>
-                                    </div>
-
-                                    <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 20px; background: rgba(15,23,42,0.95); padding: 15px 30px; border-radius: 30px; border: 1px solid var(--border);">
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;" onclick="showDemoScreen('morning')">🏠</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;" onclick="showDemoScreen('chat')">💬</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;" onclick="showDemoScreen('analytics')">📊</button>
-                                        <button style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;">👤</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <p style="color: var(--gray); margin-bottom: 20px;">Impressionado? Esta é apenas uma pequena amostra do poder do MeuSócio AI.</p>
-                <a href="#acesso" class="access-button" onclick="closeDemo()">Quero Ter Acesso Completo</a>
-            </div>
-        </div>
-    </div>
+        /* Touch-friendly enhancements */
+        @media (hover: none) and (pointer: coarse) {
+            .demo-card {
+                padding: 25px;
+            }
+            
+            .demo-nav-btn {
+                padding: 18px 20px;
+            }
+            
+            .faq-question {
+                padding: 30px;
+            }
+            
+            .access-button, .secondary-button {
+                padding: 16px 35px;
+                font-size: 1rem;
+            }
+        }
 
     <style>
         /* Demo Specific Styles */
@@ -3398,17 +3334,7 @@
     </script>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p style="margin-bottom: 20px;">
-                <strong>MeuSócio AI</strong> - Inteligência Artificial Exclusiva para Líderes Visionários
-            </p>
-            <p style="color: rgba(255,255,255,0.5); font-size: 0.9em;">
-                © 2024 MeuSócio AI. Tecnologia proprietária protegida por patentes internacionais.<br>
-                Termos de Uso | Política de Privacidade | NDA | contato@meusocio.ai
-            </p>
-        </div>
-    </footer>
+    
 
     <script>
         // Form submission
